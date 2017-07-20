@@ -1,4 +1,4 @@
-package com.example.aa.httpdemo;
+package com.example.aa.httpdemo.http;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -137,7 +137,7 @@ public class Http {
                 .build();
 
         Request request = new Request.Builder()
-                .header()
+               // .header()
                 .url("https://api.imgur.com/3/image")
                 .post(requestBody)
                 .build();
@@ -164,6 +164,10 @@ public class Http {
                 .readTimeout(20, TimeUnit.SECONDS)
                 .cache(new Cache(sdcache.getAbsoluteFile(), cacheSize));
         mOkHttpClient = builder.build();
+    }
+
+    private File getExternalCacheDir() {
+        return null;
     }
 
 
